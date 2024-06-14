@@ -1,33 +1,24 @@
 import { ToastContainer } from "react-toastify";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
-import { useState } from "react";
-import Navbar from "./components/Navbar";
-import Todos from "./components/Todos";
-import Login from "./components/Login";
+import HomePage from "./pages/HomePage";
+import { UserProvider } from "./userContext";
+import LoginPage from "./pages/LoginPage/LoginPage";
+import SignupPage from "./pages/SignupPage/SignupPage";
 
 function App() {
-  const [userLogin, setUserLogin] = useState(false);
   return (
-    // {
-    !userLogin ? (
-      <>
-        <Navbar />
-        <Login setUserLogin={setUserLogin} />
-      </>
-    ) : (
-      <>
-        <Navbar />
-        <Todos />
-        <ToastContainer />
-      </>
-    )
-    // }
-    // <>
-    //   <Navbar />
-    //   <Todos />
-    //   <ToastContainer />
-    // </>
+    <UserProvider>
+    <ToastContainer />
+    <Router>
+      <Routes>
+        <Route path="/login" element={<LoginPage/>} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/" element={<HomePage/>} />
+      </Routes>
+    </Router>
+    </UserProvider>
   );
 }
 
