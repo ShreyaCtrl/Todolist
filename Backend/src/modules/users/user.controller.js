@@ -1,4 +1,5 @@
 import UserModel from "../../../DB/models/User.model.js";
+import jwt from "jsonwebtoken";
 
 export const addUser = async (req, res) => {
   const { username, password } = req.body;
@@ -38,9 +39,13 @@ export const findUser = async (req, res) => {
       return res.status(404).json({ message: "Invalid Username or Password" });
     }
 
-    return res.status(200).json({ user });
+    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
+      expiresIn: "1h",
+    });
+
+    return res.status(200).json({ token });
   } catch (error) {
     console.log(error);
-    return res.status(500).json({ message: "Internal server error" });
+    return res.status(500).json({ message: "Internal server error", error: error });
   }
 };
