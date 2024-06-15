@@ -15,7 +15,7 @@ Please refer to the documentation of each library for more information on how to
 
 ## Live Preview
 
-<h4 align="left">Live Preview is available at https://fullstack-todolist-1.onrender.com/</h4>
+<h4 align="left">Live Preview is available at https://todolist-qmfsdg6ji-shreya-parkars-projects.vercel.app/</h4>
 
 ## Snapshots
 
