@@ -33,7 +33,7 @@ const Signup = () => {
           Sign Up
         </Typography>
         <Typography variant="body2" color="textSecondary" align="center">
-          Already have an account? <Link href="/login">Login here</Link>
+          Already have an account? <Link href="/">Login here</Link>
         </Typography>
         <form onSubmit={handleSubmit}>
           <TextField

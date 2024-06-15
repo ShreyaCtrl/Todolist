@@ -7,13 +7,16 @@ const useAddUser = () => {
   const addUser = async (user) => {
     try {
       setIsLoading(true);
-      const response = await fetch("http://localhost:5000/users/signup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(user),
-      });
+      const response = await fetch(
+        "https://todolist-or9l.onrender.com/users/signup",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(user),
+        }
+      );
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);

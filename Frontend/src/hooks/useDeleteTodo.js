@@ -45,13 +45,16 @@ const useDeleteTodo = (fetchTodos, page, limit) => {
     const token = localStorage.getItem("token");
     try {
       setIsLoading(true);
-      const response = await fetch(`http://localhost:5000/todos/destroy/${id}`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const response = await fetch(
+        `https://todolist-or9l.onrender.com/todos/destroy/${id}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);

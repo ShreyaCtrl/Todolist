@@ -35,7 +35,7 @@ const useGetTodos = (setTodos, setNumOfPages, setPage) => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `http://localhost:5000/todos/get?page=${page}&limit=${limit}`,
+        `https://todolist-or9l.onrender.com/todos/get?page=${page}&limit=${limit}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

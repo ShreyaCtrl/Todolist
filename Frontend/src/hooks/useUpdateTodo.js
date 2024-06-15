@@ -49,14 +49,17 @@ const useUpdateTodo = (setTodos) => {
     const token = localStorage.getItem("token");
     try {
       setIsLoading(true);
-      const response = await fetch(`http://localhost:5000/todos/modify/${todo._id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({ isCompleted: !todo.isCompleted }),
-      });
+      const response = await fetch(
+        `https://todolist-or9l.onrender.com/todos/modify/${todo._id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({ isCompleted: !todo.isCompleted }),
+        }
+      );
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
