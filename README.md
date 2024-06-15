@@ -28,7 +28,7 @@ Contributions are welcome! See the specific README files in the `frontend/` and 
 
 ## Live Demo
 
-<h4 align="left">Live Preview is available at [https://fullstack-todolist-1.onrender.com](https://todolist-qmfsdg6ji-shreya-parkars-projects.vercel.app)</h4>
+<h4 align="left">Live Preview is available at https://todolist-qmfsdg6ji-shreya-parkars-projects.vercel.app</h4>
 
 ## Snapshots
 
