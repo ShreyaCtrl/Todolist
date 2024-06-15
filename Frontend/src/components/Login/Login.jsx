@@ -78,7 +78,14 @@
 
 
 import React, { useState, useEffect, useContext } from "react";
-import { Box, Button, Container, TextField, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  TextField,
+  Link,
+  Typography,
+} from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../userContext.jsx"; // Adjust the import path
 import useGetUser from "../../hooks/useGetUser.js"; // Adjust the import path
@@ -90,19 +97,30 @@ const Login = () => {
   const { fetchUser, isFetchingUser } = useGetUser(setUser);
   const navigate = useNavigate();
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   const fetchedUser = await fetchUser(username, password);
+  //   console.log('fetched user: ', fetchUser);
+  //   if (fetchedUser) {
+  //     // No need to set user and token here, it's already handled in useGetUser hook
+  //     navigate("/home"); // Navigate to home after successful login
+  //   }
+  // };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const fetchedUser = await fetchUser(username, password);
+    const fetchedUser = await fetchUser(username, password); // Call fetchUser with username and password
+    console.log("fetched user: ", fetchedUser);
     if (fetchedUser) {
-      setUser(fetchedUser); // Set user state
+      navigate("/home"); // Navigate to home after successful login
     }
   };
 
-  useEffect(() => {
-    if (user) {
-      navigate("/"); // Navigate to the homepage when user is set
-    }
-  }, [user, navigate]);
+  // useEffect(() => {
+  //   if (user) {
+  //     navigate("/home"); // Navigate to the homepage when user is set
+  //   }
+  // }, [user, navigate]);
 
   return (
     <Container maxWidth="xs">
@@ -115,6 +133,9 @@ const Login = () => {
       >
         <Typography variant="h4" component="h1" gutterBottom>
           Login
+        </Typography>
+        <Typography variant="body2" color="textSecondary">
+          Visiting first time <Link href="/signup">Sign up here</Link>
         </Typography>
         <form onSubmit={handleSubmit}>
           <TextField

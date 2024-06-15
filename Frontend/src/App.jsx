@@ -8,16 +8,17 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import SignupPage from "./pages/SignupPage/SignupPage";
 
 function App() {
+  console.clear();
   return (
     <UserProvider>
-    <ToastContainer />
-    <Router>
-      <Routes>
-        <Route path="/login" element={<LoginPage/>} />
-        <Route path="/signup" element={<SignupPage />} />
-        <Route path="/" element={<HomePage/>} />
-      </Routes>
-    </Router>
+      <Router>
+      <ToastContainer />
+        <Routes>
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
+          <Route path="/home" element={<HomePage />} />
+        </Routes>
+      </Router>
     </UserProvider>
   );
 }
