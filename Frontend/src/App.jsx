@@ -4,11 +4,11 @@ import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import HomePage from "./pages/HomePage";
 import { UserProvider } from "./userContext";
-import LoginPage from "./pages/LoginPage/LoginPage";
-import SignupPage from "./pages/SignupPage/SignupPage";
+import LoginPage from "./pages/LoginPage";
+import SignupPage from "./pages/SignupPage";
 
 function App() {
-  console.clear();
+  // console.clear();
   return (
     <UserProvider>
       <Router>
