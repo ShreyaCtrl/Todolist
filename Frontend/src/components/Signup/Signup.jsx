@@ -5,8 +5,9 @@ import {
   Container,
   TextField,
   Typography,
-  Link,
+  
 } from "@mui/material";
+import { Link } from "react-router-dom";
 import useAddUser from "../../hooks/useAddUser"; // Adjust the import path
 
 const Signup = () => {
@@ -33,7 +34,7 @@ const Signup = () => {
           Sign Up
         </Typography>
         <Typography variant="body2" color="textSecondary" align="center">
-          Already have an account? <Link href="/">Login here</Link>
+          Already have an account? <Link to="/">Login here</Link>
         </Typography>
         <form onSubmit={handleSubmit}>
           <TextField

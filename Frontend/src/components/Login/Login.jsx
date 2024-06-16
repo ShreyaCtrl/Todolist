@@ -83,10 +83,9 @@ import {
   Button,
   Container,
   TextField,
-  Link,
   Typography,
 } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { UserContext } from "../../userContext.jsx"; // Adjust the import path
 import useGetUser from "../../hooks/useGetUser.js"; // Adjust the import path
 
@@ -135,7 +134,7 @@ const Login = () => {
           Login
         </Typography>
         <Typography variant="body2" color="textSecondary">
-          Visiting first time <Link href="/signup">Sign up here</Link>
+          Visiting first time <Link to="/signup">Sign up here</Link>
         </Typography>
         <form onSubmit={handleSubmit}>
           <TextField
